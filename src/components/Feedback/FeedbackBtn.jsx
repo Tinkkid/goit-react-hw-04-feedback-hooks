@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Button, BtnWrap } from './FeedBackBtn.styled';
 
-export const FeedbackOptions = ({ options, good, onButtonClick }) => {
+export const FeedbackOptions = ({ options, onButtonClick }) => {
   return (
     <BtnWrap>
-      {Object.keys(options).map((value, id) => {
+      {options.map((value, id) => {
         return (
           <Button
             key={id}
@@ -22,6 +22,6 @@ export const FeedbackOptions = ({ options, good, onButtonClick }) => {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };

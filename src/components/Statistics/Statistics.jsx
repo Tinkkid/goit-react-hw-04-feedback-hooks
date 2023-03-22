@@ -10,7 +10,13 @@ import {
   FeedbackWrap,
 } from './Statistics.styled';
 
-export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
   return (
     <FeedbackWrap>
       <FeedBackList>
@@ -28,8 +34,10 @@ export const Statistics = ({ good, neutral, bad, total, positivePercentage }) =>
         </FeedBackEmotion>
       </FeedBackList>
       <Summary>
-        <Total>Total: {total()}</Total>
-        <PositiveFeedback>Positive feedback: {positivePercentage()}%</PositiveFeedback>
+        <Total>Total: {total}</Total>
+        <PositiveFeedback>
+          Positive feedback: {positivePercentage()}%
+        </PositiveFeedback>
       </Summary>
     </FeedbackWrap>
   );
@@ -39,6 +47,6 @@ Statistics.propTypes = {
   good: PropTypes.number,
   neutral: PropTypes.number,
   bad: PropTypes.number,
-  total: PropTypes.func,
+  total: PropTypes.number,
   positivePercentage: PropTypes.func,
 };
